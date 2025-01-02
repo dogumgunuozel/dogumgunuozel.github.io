@@ -17,7 +17,11 @@ $(document).ready(function() {
         let balloon = document.createElement('div');
         balloon.className = 'balloon';
         balloon.style.left = Math.random() * 100 + '%';
+        balloon.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
         balloon.style.animationDuration = 4 + Math.random() * 3 + 's';
+        balloon.addEventListener('animationend', function() {
+            balloon.style.animationName = 'pop';
+        });
         document.getElementById('balloons').appendChild(balloon);
     }
 
