@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutlu yıllar</title>
+    <title>Doğum Günü Kutlamaları</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
@@ -11,8 +11,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background: url('https://i.hizliresim.com/gkte0h8.jpg?_gl=1*11hrh5w*_ga*MTk2MjQ0MTU5OS4xNzI3OTU3NzEz*_ga_M9ZRXYS2YN*MTczNTgxNDE2Ny40LjEuMTczNTgxNDIwOS4xOC4wLjA.') no-repeat center center fixed;
+            background-size: cover;
             font-family: Arial, sans-serif;
+            color: #fff;
         }
         .birthday-message {
             text-align: center;
@@ -25,15 +27,15 @@
     </style>
 </head>
 <body>
-    <div class="birthday-message">
+    <div class="birthday-message animate__animated animate__fadeInDown">
         <h1>Doğum Günün Kutlu Olsun!</h1>
-        <p>cok sade oldu aq</p>
+        <p>Seni çok seviyorum!</p>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
             setTimeout(function() {
-                $('.birthday-message').addClass('animate__animated animate__zoomIn');
+                $('.birthday-message').removeClass('animate__fadeInDown').addClass('animate__animated animate__bounceIn');
             }, 2000);
         });
     </script>
