@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,6 +36,42 @@
                 transform: translateY(-15px);
             }
         }
+        .sparkles {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            box-shadow: 0 0 10px white;
+            animation: sparkle 1s infinite;
+        }
+        @keyframes sparkle {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 50px;
+            height: 70px;
+            background-color: rgba(255, 0, 0, 0.7);
+            border-radius: 50%;
+            animation: rise 5s infinite;
+        }
+        @keyframes rise {
+            from { transform: translateY(0); }
+            to { transform: translateY(-800px); }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: red;
+            animation: fall 3s infinite;
+        }
+        @keyframes fall {
+            from { transform: translateY(0); }
+            to { transform: translateY(800px); }
+        }
     </style>
 </head>
 <body>
@@ -43,13 +79,28 @@
         <h1>Doğum Günün Kutlu Olsun!</h1>
         <p>cok sade oldu aq</p>
     </div>
+    <div id="balloons"></div>
+    <div id="confetti"></div>
+    <div id="sparkles"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
             setTimeout(function() {
                 $('.birthday-message').removeClass('animate__fadeInDown').addClass('animate__animated animate__bounce');
             }, 2000);
-        });
-    </script>
-</body>
-</html>
+
+            // Sparkles
+            for (let i = 0; i < 100; i++) {
+                let sparkle = document.createElement('div');
+                sparkle.className = 'sparkles';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.left = Math.random() * 100 + '%';
+                document.getElementById('sparkles').appendChild(sparkle);
+            }
+
+            // Balloons
+            for (let i = 0; i < 20; i++) {
+                let balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                balloon.style.left = Math.random() * 100 + '%';
+                balloon.style.animation
