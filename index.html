@@ -15,6 +15,7 @@
             background-size: cover;
             font-family: Arial, sans-serif;
             color: #fff;
+            overflow: hidden;
         }
         .birthday-message {
             text-align: center;
@@ -36,7 +37,7 @@
                 transform: translateY(-15px);
             }
         }
-        .sparkles {
+        .sparkle {
             position: absolute;
             width: 2px;
             height: 2px;
@@ -83,24 +84,6 @@
     <div id="confetti"></div>
     <div id="sparkles"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            setTimeout(function() {
-                $('.birthday-message').removeClass('animate__fadeInDown').addClass('animate__animated animate__bounce');
-            }, 2000);
-
-            // Sparkles
-            for (let i = 0; i < 100; i++) {
-                let sparkle = document.createElement('div');
-                sparkle.className = 'sparkles';
-                sparkle.style.top = Math.random() * 100 + '%';
-                sparkle.style.left = Math.random() * 100 + '%';
-                document.getElementById('sparkles').appendChild(sparkle);
-            }
-
-            // Balloons
-            for (let i = 0; i < 20; i++) {
-                let balloon = document.createElement('div');
-                balloon.className = 'balloon';
-                balloon.style.left = Math.random() * 100 + '%';
-                balloon.style.animation
+    <script src="script.js"></script>
+</body>
+</html>
