@@ -1,3 +1,34 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://i.hizliresim.com/gkte0h8.jpg?_gl=1*11hrh5w*_ga*MTk2MjQ0MTU5OS4xNzI3OTU3NzEz*_ga_M9ZRXYS2YN*MTczNTgxNDE2Ny40LjEuMTczNTgxNDIwOS4xOC4wLjA.') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+.birthday-message {
+    text-align: center;
+    text-shadow: 2px 2px 4px #000;
+    animation: fadeIn 2s, bounce 2s infinite;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
 #surprise-button {
     margin-bottom: 20px;
     padding: 10px 20px;
@@ -9,20 +40,52 @@
     cursor: pointer;
     animation: pulse 1s infinite;
 }
-
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
-
 #cake-container img {
     width: 200px;
     height: auto;
 }
-
-#blow-out-candles {
-    font-size: 18px;
-    color: #ff6f61;
-    cursor: pointer;
+.sparkle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow: 0 0 10px white;
+    animation: sparkle 1s infinite;
+}
+@keyframes sparkle {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 50%;
+    animation: rise 5s infinite;
+}
+@keyframes rise {
+    from { transform: translateY(0); }
+    to { transform: translateY(-800px); }
+}
+@keyframes pop {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    animation: fall 3s infinite;
+}
+@keyframes fall {
+    from { transform: translateY(0); }
+    to { transform: translateY(800px); }
 }
