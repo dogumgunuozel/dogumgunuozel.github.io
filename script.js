@@ -3,6 +3,17 @@ $(document).ready(function() {
         $('.birthday-message').removeClass('animate__fadeInDown').addClass('animate__animated animate__bounce');
     }, 2000);
 
+    // Sürpriz butonu için işlev
+    $('#surprise-button').click(function() {
+        $('#cake-container').show();
+    });
+
+    // Mumları üfle işlevi
+    $('#blow-out-candles').click(function() {
+        alert('Mumlar söndü! Doğum günün kutlu olsun!');
+        $('#birthday-cake').attr('src', 'your-cake-without-candles-image-url'); // Mumsuz pasta resmi
+    });
+
     // Sparkles
     for (let i = 0; i < 100; i++) {
         let sparkle = document.createElement('div');
@@ -12,7 +23,7 @@ $(document).ready(function() {
         document.getElementById('sparkles').appendChild(sparkle);
     }
 
-    // Balloons
+    // Balonlar
     for (let i = 0; i < 20; i++) {
         let balloon = document.createElement('div');
         balloon.className = 'balloon';
@@ -25,7 +36,7 @@ $(document).ready(function() {
         document.getElementById('balloons').appendChild(balloon);
     }
 
-    // Confetti
+    // Konfeti
     for (let i = 0; i < 100; i++) {
         let confetti = document.createElement('div');
         confetti.className = 'confetti';
