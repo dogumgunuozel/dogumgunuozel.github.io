@@ -3,24 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doğum Günü Kutlamaları</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>:3</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://i.hizliresim.com/gkte0h8.jpg?_gl=1*11hrh5w*_ga*MTk2MjQ0MTU5OS4xNzI3OTU3NzEz*_ga_M9ZRXYS2YN*MTczNTgxNDE2Ny40LjEuMTczNTgxNDIwOS4xOC4wLjA.') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+        #surprise-button, #cake-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #surprise-button {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        #cake-container {
+            display: none;
+            text-align: center;
+        }
+        #cake {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div class="birthday-message animate__animated animate__fadeInDown">
-        <button id="surprise-button">Sürpriz!</button>
-        <h1>Doğum Günün Kutlu Olsun!</h1>
-        <p>Çok sade oldu aq</p>
-        <div id="cake-container" style="display:none; text-align:center;">
-            <img src="your-cake-image-url" alt="Pasta" id="birthday-cake">
-            <p id="blow-out-candles" style="cursor:pointer;">Mumları üfle!</p>
-        </div>
+    <button id="surprise-button">Sürpriz!</button>
+    <div id="cake-container">
+        <img src="https://i.hizliresim.com/7edwrrq.png?_gl=1*a1iia2*_ga*MTk2MjQ0MTU5OS4xNzI3OTU3NzEz*_ga_M9ZRXYS2YN*MTczNjAxNzc1OC41LjEuMTczNjAxNzc3My40NS4wLjA." alt="Pasta" id="cake">
+        <p>Mumları üfle!</p>
     </div>
-    <div id="balloons"></div>
-    <div id="confetti"></div>
-    <div id="sparkles"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('surprise-button').onclick = function() {
+            document.getElementById('cake-container').style.display = 'block';
+        };
+        document.getElementById('cake').onclick = function() {
+            alert('Mumlar söndü! Doğum günün kutlu olsun!');
+            this.src = 'https://i.hizliresim.com/g0yvipe.png?_gl=1*12gk862*_ga*MTk2MjQ0MTU5OS4xNzI3OTU3NzEz*_ga_M9ZRXYS2YN*MTczNjAxNzc1OC41LjEuMTczNjAxODQ5Mi41Ny4wLjA.'; // Mumsuz pasta resmi
+        };
+    </script>
 </body>
 </html>
